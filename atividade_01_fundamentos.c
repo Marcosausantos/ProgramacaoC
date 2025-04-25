@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 
@@ -69,6 +70,7 @@ int main() {
     
     superPoder_2 = (float) populacao_2 + area_2 + pib_2 + pontosturisticos_2 + pibPercapto_2 + (1/densidadePopulacional_2);
 
+    /*
     printf("\nCarta 01:\n");
     printf("Estado: %c\n", estado_1);
     printf("Código: %s\n", codigo_1);
@@ -90,9 +92,9 @@ int main() {
     printf("Número de Pontos Turísticos: %d\n", pontosturisticos_2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional_2);
     printf("PIB per Capita %.2f reais\n", pibPercapto_2);
-
-
-
+    */
+    
+    /*
     printf("\nCOMPARAÇAO DAS CARTAS // RESULTADO 1= CARTA1 / RESULTAO 0 = CARTA2:\n");
     printf("População: A Carta que venceu %d\n", populacao_1 > populacao_2);
     printf("AREA: A Carta que venceu %d\n", area_1 > area_2);
@@ -101,7 +103,25 @@ int main() {
     printf("Densidade Populacional: A Carta que venceu %d\n", densidadePopulacional_1 > densidadePopulacional_2);
     printf("PIB Percapto: A Carta que venceu %d\n", pibPercapto_1 > pibPercapto_2);
     printf("SUPERPODER: A Carta que venceu %d\n", superPoder_1 > superPoder_2);
+    */
+
+    char cidadeVencedora[50], resultadoPopulacao[50];
+
+    // Populacao
+    if (populacao_1 > populacao_2){
+
+        strcpy(resultadoPopulacao,"Carta 1");
+        strcpy(cidadeVencedora, cidade_1);
+       
+    } else {
+
+        strcpy(resultadoPopulacao,"Carta 2");
+        strcpy(cidadeVencedora, cidade_2);
+    }
     
-        
+    printf("Carta 1 - %s : %ld\n", cidade_1, populacao_1);
+    printf("Carta 2 - %s : %ld\n", cidade_2, populacao_2);
+    printf("Resultado: %s %s VENCEU!!\n", resultadoPopulacao, cidadeVencedora); 
+    
     return 0;
 }
