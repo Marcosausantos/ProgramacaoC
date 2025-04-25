@@ -11,7 +11,7 @@ int main() {
     
     float densidadePopulacional_1, densidadePopulacional_2, pibPercapto_1, pibPercapto_2;
     
-    long int populacao_1, populacao_2;
+    int populacao_1, populacao_2;
 
     float superPoder_1, superPoder_2;
 
@@ -106,22 +106,41 @@ int main() {
     */
 
     char cidadeVencedora[50], resultadoPopulacao[50];
+    int opcaoMenu;
 
-    // Populacao
-    if (populacao_1 > populacao_2){
+    printf("Menu Principal\n");
+    printf("1. Comparar usando a população\n");
+    scanf("%d", &opcaoMenu);
 
-        strcpy(resultadoPopulacao,"Carta 1");
-        strcpy(cidadeVencedora, cidade_1);
-       
-    } else {
+    switch (opcaoMenu){
+        case 1:
+            //Populacao
+            if (populacao_1 > populacao_2){
 
-        strcpy(resultadoPopulacao,"Carta 2");
-        strcpy(cidadeVencedora, cidade_2);
+                strcpy(resultadoPopulacao,"Carta 1");
+                strcpy(cidadeVencedora, cidade_1);
+            
+            } else {
+
+                strcpy(resultadoPopulacao,"Carta 2");
+                strcpy(cidadeVencedora, cidade_2);
+            }
+            
+            printf("Carta 1 - %s : %ld\n", cidade_1, populacao_1);
+            printf("Carta 2 - %s : %ld\n", cidade_2, populacao_2);
+            printf("Resultado: %s %s VENCEU!!\n", resultadoPopulacao, cidadeVencedora); 
+            break;
+
+        default:
+            printf("Opção invalida \n");
+
     }
     
-    printf("Carta 1 - %s : %ld\n", cidade_1, populacao_1);
-    printf("Carta 2 - %s : %ld\n", cidade_2, populacao_2);
-    printf("Resultado: %s %s VENCEU!!\n", resultadoPopulacao, cidadeVencedora); 
+    
+    
+    
+    
+    
     
     return 0;
 }
